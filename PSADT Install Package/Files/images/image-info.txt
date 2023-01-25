@@ -1,0 +1,3 @@
+The image script (New-LSInfoImage.ps1) will randomly select an image (.jpg) from this folder that matches the aspect ratio of the primary display where the script is running. 
+
+Currently, we include the same image but in different formats: 2.4:1 for our wide screens, 3:2 for our Surface devices, 16:9 for our standard desktop monitors, and 21:9 for our other wide screens. In the past, we included a lot of images from around our campus. If you go this route, there is a chance a different image could be picked whenever the script runs (as long as it matches the display's aspect ratio). It adds *variety*!...
