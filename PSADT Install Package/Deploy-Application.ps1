@@ -156,7 +156,8 @@ Try {
 		$taskname = "New-LSInfoImage"
 		$taskpath = "\yourOrg"
 		$taskdesc = "Generates a lock screen image with device information and QR code included."
-		$argument = "-Process:explorer.exe C:\Windows\SysWOW64\wscript.exe C:\PROGRA~1\WESLEY~1\LSInfo\scripts\PsRun.vbs C:\PROGRA~1\WESLEY~1\LSInfo\Invoke-LSInfo.ps1"
+		## I don't remember why 8.3 file names were needed in my use case here... but it works (probably has something to do with VBS):
+		$argument = "-Process:explorer.exe C:\Windows\SysWOW64\wscript.exe C:\PROGRA~1\yourOrg\LSInfo\scripts\PsRun.vbs C:\PROGRA~1\yourOrg\LSInfo\Invoke-LSInfo.ps1"
 		$action = New-ScheduledTaskAction -Execute "$LocalPath\ServiceUI.exe" -Argument $argument
 		$principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 		$stateChangeTrigger = Get-CimClass -Namespace ROOT\Microsoft\Windows\TaskScheduler -ClassName MSFT_TaskSessionStateChangeTrigger
